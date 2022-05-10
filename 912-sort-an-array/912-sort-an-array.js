@@ -11,9 +11,11 @@ var sortArray = function(nums) {
               min = j;
           }
       }
-      let temp = nums[i];
-      nums[i] = nums[min];
-      nums[min] = temp;
+      if(nums[i] !== nums[min]) {
+          let temp = nums[i];
+        nums[i] = nums[min];
+        nums[min] = temp;
+      }
   }
     return nums;
 };
