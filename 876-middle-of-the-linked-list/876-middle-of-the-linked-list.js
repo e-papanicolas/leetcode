@@ -10,7 +10,6 @@
  * @return {ListNode}
  */
 var middleNode = function(head) {
-    let count = 0;
     let arr =  [];
     while(head) {
         arr.push(head);
