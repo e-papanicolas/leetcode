@@ -3,14 +3,10 @@
  * @return {number}
  */
 var singleNumber = function(nums) {
-    let map = {};
     
+    let total = 0;
     for(let num of nums) {
-        if(map[num]) map[num]++;
-        else map[num] = 1;
+        total = num ^ total;
     }
-    
-    for(let [key, val] of Object.entries(map)){
-        if(val === 1) return key;
-    }
+    return total;
 };
