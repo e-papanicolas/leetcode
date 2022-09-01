@@ -1,4 +1,4 @@
 # leetcode
 All of my Leetcode accepted solutions.
 
-Created using [LeetHub](https://github.com/QasimWani/LeetHub)
+I created this repository to store all of my LeetCode solutions by using [LeetHub](https://github.com/QasimWani/LeetHub).
