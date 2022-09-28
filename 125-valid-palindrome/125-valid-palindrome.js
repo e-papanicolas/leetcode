@@ -3,15 +3,24 @@
  * @return {boolean}
  */
 var isPalindrome = function(s) {
-    let newStr = '';
+    let left = 0;
+    let right = s.length - 1;
     
-    for(let char of s) {
-        if(isAlphaNumeric(char)) {
-            newStr += char.toLowerCase();
+    while(left < right) {
+        while(left < right && !isAlphaNumeric(s[left])) {
+            left += 1;
         }
+        
+        while(left < right && !isAlphaNumeric(s[right])) {
+            right -= 1;
+        }
+        
+        if(s[left].toLowerCase() !== s[right].toLowerCase()) return false;
+        
+        left ++;
+        right--;
     }
-    
-    return newStr === newStr.split('').reverse().join('');
+    return true;
 };
 
 function isAlphaNumeric(str) {
@@ -27,4 +36,3 @@ function isAlphaNumeric(str) {
   }
   return true;
 };
-
