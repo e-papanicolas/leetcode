@@ -3,16 +3,14 @@
  * @return {number[]}
  */
 var runningSum = function(nums) {
-    let result = [nums[0]];
+    const result = [];
     
-    let current = nums[0];
-    let temp;
+    let current = 0;
     
-    for(let i = 1; i < nums.length; i++) {
-        temp = nums[i];
-        temp += current;
-        result.push(temp);
-        current = temp;
+    for(let i = 0; i < nums.length; i++) {
+        let sum = current + nums[i];
+        result.push(sum);
+        current = sum;
     }
     
     return result;
