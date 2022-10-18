@@ -11,17 +11,19 @@
  * @return {number[]}
  */
 var preorder = function(root) {
-    let data = [];
+    let result = [];
     
-    function traverse(node) {
-        if(node === null) return null;
-        data.push(node.val);
-        if(node.children) {
-            for(let i = 0; i < node.children.length; i++) {
-                traverse(node.children[i]);
-            }
-        }
+    const helper = (node) => {
+        if(!node) return;
+        let current = node.val;
+        result.push(current);
+        
+        node.children.forEach(child => {
+            return helper(child);
+        })
     }
-    traverse(root);
-    return data;
+    
+    helper(root);
+    
+    return result;
 };
